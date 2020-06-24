@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<SplitPane dividerPositions="0.5, 0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab09_application.WindowController">
+   <items>
+      <Label fx:id="infoLabel" text="Info" />
+      <BorderPane maxHeight="-Infinity" prefHeight="34.0" prefWidth="598.0">
+         <top>
+            <BorderPane BorderPane.alignment="CENTER">
+               <left>
+                  <FlowPane BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="listenPortTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="Your port" text="1" />
+                     </children>
+                  </FlowPane>
+               </left>
+               <right>
+                  <Button fx:id="listenButton" maxHeight="-Infinity" mnemonicParsing="false" onAction="#createListeningPortAction" prefHeight="26.0" prefWidth="115.0" text="Listen" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </top>
+         <center>
+            <FlowPane maxHeight="-Infinity" prefHeight="33.0" prefWidth="538.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="sendIpTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Connection IP" text="0.0.0.0" />
+                  <TextField fx:id="sendPortTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Connection port" text="1" />
+               </children>
+            </FlowPane>
+         </center>
+         <right>
+            <Button fx:id="connectButton" disable="true" maxHeight="-Infinity" mnemonicParsing="false" onAction="#establishConnectionAction" prefHeight="25.0" prefWidth="114.0" text="Connect" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+         <items>
+            <TextArea fx:id="messagesTextArea" editable="false" maxHeight="1.7976931348623157E308" prefHeight="185.0" prefWidth="598.0" promptText="Messages" />
+            <BorderPane maxHeight="-Infinity" prefHeight="36.0" prefWidth="598.0">
+               <center>
+                  <TextArea fx:id="newMessageTextArea" prefHeight="58.0" prefWidth="496.0" promptText="Message (max 245 characters)" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <Button fx:id="sendButton" disable="true" mnemonicParsing="false" onAction="#sendMessageAction" prefHeight="41.0" prefWidth="70.0" text="Send" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </items>
+</SplitPane>
